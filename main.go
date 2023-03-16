@@ -6,6 +6,7 @@ import (
 	"simpleSQL/produk"
 )
 
+// ini remark ugi
 func main() {
 	var koneksi = config.InitSQL()
 	var mdl = produk.ProdukModel{}
