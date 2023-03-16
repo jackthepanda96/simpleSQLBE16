@@ -16,7 +16,11 @@ func main() {
 	for menu != 99 {
 		fmt.Println("1. Input Barang")
 		fmt.Println("2. Tampilkan Daftar Barang")
+<<<<<<< HEAD
 		fmt.Println("3. Edit Barang")
+=======
+		fmt.Println("4. Delete Barang")
+>>>>>>> feature: delete barang
 		fmt.Println("99. Exit")
 		fmt.Print("Masukkan pilihan ")
 		fmt.Scanln(&menu)
@@ -45,6 +49,17 @@ func main() {
 			if err != nil {
 				fmt.Println("terjadi kesalahan saat update data")
 			}
+		case 4:
+			var barcode int
+			fmt.Print("Masukkan barcode produk:")
+			fmt.Scanln(&barcode)
+			err := mdl.DeleteProduk(barcode)
+			if err != nil {
+				fmt.Println("Terjadi sebuah kesalahan")
+				break
+			}
+
+			fmt.Println("sukses menghapus data")
 		}
 	}
 }
