@@ -16,11 +16,8 @@ func main() {
 	for menu != 99 {
 		fmt.Println("1. Input Barang")
 		fmt.Println("2. Tampilkan Daftar Barang")
-<<<<<<< HEAD
 		fmt.Println("3. Edit Barang")
-=======
 		fmt.Println("4. Delete Barang")
->>>>>>> feature: delete barang
 		fmt.Println("99. Exit")
 		fmt.Print("Masukkan pilihan ")
 		fmt.Scanln(&menu)
