@@ -83,3 +83,26 @@ func (pm *ProdukModel) EditBarang(barcode int, updatedData Produk) error {
 
 	return nil
 }
+
+func (pm *ProdukModel) DeleteProduk(barcode int) error {
+	res, err := pm.conn.Exec("DELETE FROM produk WHERE barcode = ?", barcode)
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+
+	aff, err := res.RowsAffected()
+
+	if err != nil {
+		fmt.Println(err)
+		return err
+	}
+
+	if aff <= 0 {
+		return errors.New("terjadi sebuah masalah pada sistem")
+	}
+
+	pm.conn.Close()
+
+	return nil
+}
